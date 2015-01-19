@@ -1,0 +1,36 @@
+{
+  "name": "dep-case-verify",
+  "version": "1.0.0",
+  "description": "verify dependency paths in non-case-sensitive environments",
+  "keywords": [
+    "browserify",
+    "browserify-plugin",
+    "test"
+  ],
+  "homepage": "https://github.com/zertosh/dep-case-verify",
+  "licence": "MIT",
+  "author": "Andres Suarez <zertosh@gmail.com>",
+  "files": [
+    "README.md",
+    "dep-case-verify.js"
+  ],
+  "main": "dep-case-verify.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zertosh/dep-case-verify.git"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "dependencies": {
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "browserify": "^8.0.0",
+    "tape": "^3.4.0",
+    "underscore": "^1.7.0"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}
