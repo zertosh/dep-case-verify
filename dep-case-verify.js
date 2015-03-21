@@ -49,23 +49,25 @@ module.exports = function apply(b, opts) {
 
   b.pipeline.get('deps').push(through.obj(function(row, enc, next) {
     var stream = this;
-    var depsKeys = Object.keys(row.deps);
+    var steps = [];
 
-    // nothing to do if no deps
-    if (depsKeys.length === 0) {
+    Object.keys(row.deps).forEach(function(key) {
+      // external modules have a value of "false"
+      if (typeof row.deps[key] === 'string') {
+        pathSteps(row.deps[key]).forEach(function(step) {
+          if (skipSteps.indexOf(step) === -1) {
+            steps.push(step);
+          }
+        });
+      }
+    });
+
+    // nothing to do
+    if (steps.length === 0) {
       stream.push(row);
       next();
       return;
     }
-
-    var steps = [];
-    depsKeys.forEach(function(key) {
-      pathSteps(row.deps[key]).forEach(function(step) {
-        if (skipSteps.indexOf(step) === -1) {
-          steps.push(step);
-        }
-      });
-    });
 
     steps.forEach(function(step) {
       var basename = path.basename(step);
