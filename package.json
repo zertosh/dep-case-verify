@@ -23,6 +23,7 @@
     "test": "tape test/*.js"
   },
   "dependencies": {
+    "async-cache": "^0.1.5",
     "through2": "^0.6.3"
   },
   "devDependencies": {

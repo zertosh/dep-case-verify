@@ -1,3 +1,6 @@
+/*eslint-disable no-shadow*/
+'use strict';
+
 var browserify = require('browserify');
 var test = require('tape');
 var vm = require('vm');
@@ -32,7 +35,7 @@ test('dep-case-verify', function(t) {
     browserify('./test/fixtures/entry-bad-user-module')
       .plugin(depCaseVerify)
       .bundle(function(err, src) {
-        t.equal(err, 'Unmatched case in "test/fixtures/entry-bad-user-module" for "./dep-b"');
+        t.equal(String(err), 'Error: Unmatched case in "test/fixtures/entry-bad-user-module" for "./dep-b"');
         t.notOk(src);
       });
   });
@@ -42,7 +45,7 @@ test('dep-case-verify', function(t) {
     browserify('./test/fixtures/entry-bad-node-module')
       .plugin(depCaseVerify)
       .bundle(function(err, src) {
-        t.equal(err, 'Unmatched case in "test/fixtures/entry-bad-node-module" for "Underscore"');
+        t.equal(String(err), 'Error: Unmatched case in "test/fixtures/entry-bad-node-module" for "Underscore"');
         t.notOk(src);
       });
   });
