@@ -29,8 +29,5 @@
     "browserify": "^8.0.0",
     "tape": "^3.4.0",
     "underscore": "^1.7.0"
-  },
-  "engines": {
-    "node": ">=0.10"
   }
 }
