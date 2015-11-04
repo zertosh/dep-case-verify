@@ -12,7 +12,7 @@
   "main": "dep-case-verify.js",
   "repository": "zertosh/dep-case-verify",
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tap test/*.js"
   },
   "dependencies": {
     "async-cache": "^0.1.5",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "browserify": "^8.0.0",
-    "tape": "^3.4.0",
+    "tap": "^2.2.0",
     "underscore": "^1.7.0"
   }
 }
