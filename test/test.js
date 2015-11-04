@@ -2,12 +2,11 @@
 'use strict';
 
 var browserify = require('browserify');
-var test = require('tape');
+var test = require('tap').test;
 var vm = require('vm');
+var depCaseVerify = require('../');
 
 test('dep-case-verify', function(t) {
-
-  var depCaseVerify = require('../');
 
   t.test('mac only', function(t) {
     t.equal(process.platform, 'darwin', 'tests only run on mac');
