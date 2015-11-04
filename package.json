@@ -7,18 +7,10 @@
     "browserify-plugin",
     "test"
   ],
-  "homepage": "https://github.com/zertosh/dep-case-verify",
-  "licence": "MIT",
+  "license": "MIT",
   "author": "Andres Suarez <zertosh@gmail.com>",
-  "files": [
-    "README.md",
-    "dep-case-verify.js"
-  ],
   "main": "dep-case-verify.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/zertosh/dep-case-verify.git"
-  },
+  "repository": "zertosh/dep-case-verify",
   "scripts": {
     "test": "tape test/*.js"
   },
