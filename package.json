@@ -1,6 +1,6 @@
 {
   "name": "dep-case-verify",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "verify dependency paths in non-case-sensitive environments",
   "keywords": [
     "browserify",
