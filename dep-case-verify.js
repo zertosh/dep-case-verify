@@ -6,11 +6,7 @@ var path = require('path');
 var stream = require('stream');
 var util = require('util');
 
-var isDarwin = process.platform === 'darwin';
-
 module.exports = function apply(b, opts) {
-  // nothing to do if this isn't a mac
-  if (!isDarwin) return;
   b.pipeline.get('deps').push(new DepCaseVerify());
   b.once('reset', function() {
     apply(b, opts);
